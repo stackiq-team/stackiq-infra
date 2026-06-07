@@ -50,6 +50,9 @@ spec:
       config:
         actions:
           ENABLED: true
+        packages:
+          MAX_CREATION_LIMIT: 0
+          CHUNKED_UPLOAD_SIZE: 104857600
     service:
       http:
         type: ClusterIP
