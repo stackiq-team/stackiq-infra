@@ -1,7 +1,33 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: stackiq
+  name: stackiq-frontend
+  namespace: stackiq
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+spec:
+  ingressClassName: nginx
+  tls:
+    - secretName: stackiq-tls
+      hosts:
+        - jethroserver.duckdns.org
+  rules:
+    - host: jethroserver.duckdns.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: stackiq-backend
   namespace: stackiq
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
@@ -24,10 +50,3 @@ spec:
                 name: backend
                 port:
                   number: 4000
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: frontend
-                port:
-                  number: 80
