@@ -4,3 +4,4 @@ resources:
   - ingress-nginx.yaml
   - cert-manager.yaml
   - gitea.yaml
+  - metallb.yaml
