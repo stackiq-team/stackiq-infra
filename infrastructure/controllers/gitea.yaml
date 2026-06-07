@@ -47,6 +47,9 @@ spec:
       admin:
         existingSecret: gitea-admin-secret
         email: jethroroy@gmail.com
+      config:
+        actions:
+          ENABLED: true
     service:
       http:
         type: ClusterIP
