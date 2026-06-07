@@ -1,0 +1,68 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: frontend
+  namespace: flux-system
+spec:
+  image: jethroservergit.duckdns.org/stackiq-team/frontend
+  interval: 1m
+  secretRef:
+    name: gitea-registry-flux
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: frontend
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: frontend
+  policy:
+    semver:
+      range: ">=0.0.1"
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: backend
+  namespace: flux-system
+spec:
+  image: jethroservergit.duckdns.org/stackiq-team/backend
+  interval: 1m
+  secretRef:
+    name: gitea-registry-flux
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: backend
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: backend
+  policy:
+    semver:
+      range: ">=0.0.1"
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: worker
+  namespace: flux-system
+spec:
+  image: jethroservergit.duckdns.org/stackiq-team/worker
+  interval: 1m
+  secretRef:
+    name: gitea-registry-flux
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: worker
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: worker
+  policy:
+    semver:
+      range: ">=0.0.1"
