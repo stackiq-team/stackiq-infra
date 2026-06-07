@@ -1,3 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gitea-runner
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -26,27 +31,10 @@ spec:
                   key: token
             - name: GITEA_RUNNER_NAME
               value: "k8s-runner"
-            - name: CONFIG_FILE
-              value: /config/config.yaml
           volumeMounts:
-            - name: config
-              mountPath: /config
+            - name: docker-sock
+              mountPath: /var/run/docker.sock
       volumes:
-        - name: config
-          configMap:
-            name: gitea-runner-config
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: gitea-runner-config
-  namespace: gitea-runner
-data:
-  config.yaml: |
-    runner:
-      capacity: 2
-    container:
-      network: host
-      options: --add-host=jethroservergit.duckdns.org:192.168.0.50
-    host:
-      workdir_parent: /tmp/act
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
