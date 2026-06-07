@@ -13,6 +13,16 @@ spec:
       labels:
         app: backend
     spec:
+      initContainers:
+        - name: migrate
+          image: jethroservergit.duckdns.org/stackiq-team/backend:latest
+          command: ["npx", "prisma", "migrate", "deploy", "--config", "prisma.config.js"]
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DATABASE_URL
       imagePullSecrets:
         - name: gitea-registry
       containers:
