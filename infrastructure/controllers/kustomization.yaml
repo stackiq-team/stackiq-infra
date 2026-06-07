@@ -5,3 +5,4 @@ resources:
   - cert-manager.yaml
   - gitea.yaml
   - metallb.yaml
+  - gitea-runner.yaml
