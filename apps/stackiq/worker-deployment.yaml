@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  namespace: stackiq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      imagePullSecrets:
+        - name: gitea-registry
+      containers:
+        - name: worker
+          image: jethroservergit.duckdns.org/stackiq-team/worker:latest
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DATABASE_URL
+            - name: REDIS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: REDIS_URL
+            - name: BULLMQ_QUEUE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: BULLMQ_QUEUE_NAME

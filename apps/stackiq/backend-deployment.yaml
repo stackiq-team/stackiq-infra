@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: stackiq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      imagePullSecrets:
+        - name: gitea-registry
+      containers:
+        - name: backend
+          image: jethroservergit.duckdns.org/stackiq-team/backend:latest
+          ports:
+            - containerPort: 4000
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DATABASE_URL
+            - name: REDIS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: REDIS_URL
+            - name: BULLMQ_QUEUE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: BULLMQ_QUEUE_NAME
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: stackiq
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 4000
+      targetPort: 4000
