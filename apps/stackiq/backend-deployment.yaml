@@ -15,7 +15,7 @@ spec:
     spec:
       initContainers:
         - name: migrate
-          image: jethroservergit.duckdns.org/stackiq-team/backend:1.0.6 # {"$imagepolicy": "flux-system:backend"}
+          image: jethroservergit.duckdns.org/stackiq-team/backend:1.0.10 # {"$imagepolicy": "flux-system:backend"}
           command: ["npx", "prisma", "migrate", "deploy", "--config", "prisma.config.js"]
           env:
             - name: DATABASE_URL
@@ -27,7 +27,7 @@ spec:
         - name: gitea-registry
       containers:
         - name: backend
-          image: jethroservergit.duckdns.org/stackiq-team/backend:1.0.6 # {"$imagepolicy": "flux-system:backend"}
+          image: jethroservergit.duckdns.org/stackiq-team/backend:1.0.10 # {"$imagepolicy": "flux-system:backend"}
           ports:
             - containerPort: 4000
           env:
