@@ -17,7 +17,7 @@ spec:
         - name: gitea-registry
       containers:
         - name: worker
-          image: jethroservergit.duckdns.org/stackiq-team/worker:1.0.10 # {"$imagepolicy": "flux-system:worker"}
+          image: jethroservergit.duckdns.org/stackiq-team/worker:1.0.11 # {"$imagepolicy": "flux-system:worker"}
           env:
             - name: DATABASE_URL
               valueFrom:
