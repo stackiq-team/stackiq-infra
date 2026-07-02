@@ -34,3 +34,63 @@ spec:
                 secretKeyRef:
                   name: stackiq-secrets
                   key: BULLMQ_QUEUE_NAME
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: OPENAI_API_KEY
+            - name: GITHUB_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: GITHUB_API_TOKEN
+            - name: GITHUB_MINER_TIMEOUT_MS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: GITHUB_MINER_TIMEOUT_MS
+            - name: ISSUES_MINING_TIMEOUT_MS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: ISSUES_MINING_TIMEOUT_MS
+            - name: ISSUES_MINING_LOOKBACK_DAYS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: ISSUES_MINING_LOOKBACK_DAYS
+            - name: ISSUES_MINING_MAX_ISSUES
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: ISSUES_MINING_MAX_ISSUES
+            - name: ISSUES_MINING_TIMELINE_ITEMS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: ISSUES_MINING_TIMELINE_ITEMS
+            - name: ISSUES_MINING_MAX_TIMELINE_PAGES
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: ISSUES_MINING_MAX_TIMELINE_PAGES
+            - name: ISSUES_MINING_INCLUDE_DEV_DEPENDENCIES
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: ISSUES_MINING_INCLUDE_DEV_DEPENDENCIES
+            - name: DEPENDENCY_CACHE_VERSION
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_CACHE_VERSION
+            - name: DEPENDENCY_CACHE_TTL_DAYS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_CACHE_TTL_DAYS
+            - name: PARTIAL_DEPENDENCY_CACHE_TTL_DAYS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: PARTIAL_DEPENDENCY_CACHE_TTL_DAYS
