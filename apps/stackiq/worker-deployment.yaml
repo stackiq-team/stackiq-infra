@@ -94,3 +94,58 @@ spec:
                 secretKeyRef:
                   name: stackiq-secrets
                   key: PARTIAL_DEPENDENCY_CACHE_TTL_DAYS
+            - name: WORKER_CONCURRENCY
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: WORKER_CONCURRENCY
+            - name: MAILER_USER
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: MAILER_USER
+            - name: GMAIL_APP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: GMAIL_APP_PASSWORD
+            - name: DEPENDENCY_SYNC_ENABLED
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_SYNC_ENABLED
+            - name: DEPENDENCY_SYNC_INTERVAL_MS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_SYNC_INTERVAL_MS
+            - name: DEPENDENCY_SYNC_RUN_ON_START
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_SYNC_RUN_ON_START
+            - name: DEPENDENCY_SYNC_TOP_LIMIT
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_SYNC_TOP_LIMIT
+            - name: DEPENDENCY_RELATIONSHIPS_ENABLED
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_RELATIONSHIPS_ENABLED
+            - name: DEPENDENCY_RELATIONSHIP_MAX_PAIRS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_RELATIONSHIP_MAX_PAIRS
+            - name: DEPENDENCY_CACHE_LOCK_WAIT_MS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_CACHE_LOCK_WAIT_MS
+            - name: DEPENDENCY_RELATIONSHIP_SEARCH_RESULTS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: DEPENDENCY_RELATIONSHIP_SEARCH_RESULTS
