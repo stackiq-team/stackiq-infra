@@ -149,3 +149,18 @@ spec:
                 secretKeyRef:
                   name: stackiq-secrets
                   key: DEPENDENCY_RELATIONSHIP_SEARCH_RESULTS
+            - name: EXPLORE_TOP_LIMIT
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: EXPLORE_TOP_LIMIT
+            - name: EXPLORE_REFRESH_INTERVAL_MS
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: EXPLORE_REFRESH_INTERVAL_MS
+            - name: EXPLORE_RUN_ON_START
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: EXPLORE_RUN_ON_START
