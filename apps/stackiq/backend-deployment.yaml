@@ -46,6 +46,21 @@ spec:
                 secretKeyRef:
                   name: stackiq-secrets
                   key: BULLMQ_QUEUE_NAME
+            - name: GITHUB_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: GITHUB_API_TOKEN
+            - name: WORKER_CONCURRENCY
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: WORKER_CONCURRENCY
+            - name: EXPLORE_TOP_LIMIT
+              valueFrom:
+                secretKeyRef:
+                  name: stackiq-secrets
+                  key: EXPLORE_TOP_LIMIT
 ---
 apiVersion: v1
 kind: Service
