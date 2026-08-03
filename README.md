@@ -95,7 +95,7 @@ Fork this repository before doing anything else. Then change the following value
 
 | What to change | Current value | Files |
 |---|---|---|
-| App hostname | `jethroserver.duckdns.org` | `apps/stackiq/ingress.yaml` |
+| App hostname | `jethroserver.duckdns.org` | `apps/stackiq/ingress.yaml`, `apps\stackiq\backend-deployment.yaml`, `apps\stackiq\worker-deployment.yaml` |
 | Gitea hostname | `jethroservergit.duckdns.org` | `infrastructure/controllers/gitea.yaml`, `infrastructure/controllers/gitea-runner.yaml`, `apps/stackiq/*-deployment.yaml` (image fields), `clusters/home/image-policies.yaml` |
 | MetalLB IP | `192.168.0.50/32` | `infrastructure/configs/metallb-config.yaml` |
 | email | `jethroroy@gmail.com` | `infrastructure/configs/cluster-issuer.yaml` |
@@ -103,7 +103,6 @@ Fork this repository before doing anything else. Then change the following value
 | Git repository URL | `https://github.com/stackiq-team/stackiq-infra.git` | Set automatically when you bootstrap Flux against your fork (Path A). Not used in Path B. |
 | Registry org/repo names | `stackiq-team/backend` etc. | `apps/stackiq/*-deployment.yaml`, `clusters/home/image-policies.yaml` |
 
->The email receives certificate expiry notices from Let's Encrypt.
 
 ## Server Setup
 
