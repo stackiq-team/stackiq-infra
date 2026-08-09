@@ -95,7 +95,7 @@ Fork this repository before doing anything else. Then change the following value
 
 | What to change | Current value | Files |
 |---|---|---|
-| App hostname | `jethroserver.duckdns.org` | `apps/stackiq/ingress.yaml`, `apps\stackiq\backend-deployment.yaml`, `apps\stackiq\worker-deployment.yaml` |
+| App hostname | `stackiq.duckdns.org` | `apps/stackiq/ingress.yaml`, `apps\stackiq\backend-deployment.yaml`, `apps\stackiq\worker-deployment.yaml` |
 | Gitea hostname | `jethroservergit.duckdns.org` | `infrastructure/controllers/gitea.yaml`, `infrastructure/controllers/gitea-runner.yaml`, `apps/stackiq/*-deployment.yaml` (image fields), `clusters/home/image-policies.yaml` |
 | MetalLB IP | `192.168.0.50/32` | `infrastructure/configs/metallb-config.yaml` |
 | email | `jethroroy@gmail.com` | `infrastructure/configs/cluster-issuer.yaml` |

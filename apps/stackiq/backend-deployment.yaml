@@ -62,7 +62,7 @@ spec:
                   name: stackiq-secrets
                   key: EXPLORE_TOP_LIMIT
             - name: APP_PUBLIC_URL
-              value: "https://jethroserver.duckdns.org"
+              value: "https://stackiq.duckdns.org"
 ---
 apiVersion: v1
 kind: Service

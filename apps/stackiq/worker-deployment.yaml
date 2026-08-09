@@ -165,4 +165,4 @@ spec:
                   name: stackiq-secrets
                   key: EXPLORE_RUN_ON_START
             - name: APP_PUBLIC_URL
-              value: "https://jethroserver.duckdns.org"
+              value: "https://stackiq.duckdns.org"

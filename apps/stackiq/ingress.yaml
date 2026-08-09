@@ -11,9 +11,9 @@ spec:
   tls:
     - secretName: stackiq-tls
       hosts:
-        - jethroserver.duckdns.org
+        - stackiq.duckdns.org
   rules:
-    - host: jethroserver.duckdns.org
+    - host: stackiq.duckdns.org
       http:
         paths:
           - path: /
@@ -38,9 +38,9 @@ spec:
   tls:
     - secretName: stackiq-tls
       hosts:
-        - jethroserver.duckdns.org
+        - stackiq.duckdns.org
   rules:
-    - host: jethroserver.duckdns.org
+    - host: stackiq.duckdns.org
       http:
         paths:
           - path: /api(/|$)(.*)
