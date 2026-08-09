@@ -17,7 +17,7 @@ spec:
         - name: gitea-registry
       containers:
         - name: frontend
-          image: jethroservergit.duckdns.org/stackiq-team/frontend:1.0.19 # {"$imagepolicy": "flux-system:frontend"}
+          image: jethroservergit.duckdns.org/stackiq-team/frontend:1.0.22 # {"$imagepolicy": "flux-system:frontend"}
           ports:
             - containerPort: 80
 ---
